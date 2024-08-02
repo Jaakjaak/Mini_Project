@@ -15,10 +15,10 @@ const app = express();
 	const upload = multer({storage: storage});
 
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'c237_miniproject',
+	host: 'db4free.net',
+	user: 'jaakss',
+	password: 'Xavier1035H',
+	database: 'miniproject691',
 });
 
 connection.connect((err) => {
