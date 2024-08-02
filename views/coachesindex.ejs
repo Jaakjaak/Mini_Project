@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>ShuttleStore</title>
+</head>
+<body class="background">
+    <style>
+        .background{
+            background-color: lightblue;
+        }
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          max-width: 300px;
+          margin: auto;
+          text-align: center;
+          font-family: arial;
+        }
+        
+        .price {
+          color: grey;
+          font-size: 22px;
+        }
+        
+        .card button {
+          border: none;
+          outline: 0;
+          padding: 12px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+          font-size: 18px;
+        }
+        
+        .card button:hover {
+          opacity: 0.7;
+        }
+        </style>
+        </head>
+        <body>
+            <%- include ('partials/navbar2.ejs') %>
+        
+            <div class="container">
+                <br>
+                <h2 style="text-align:center">Coaches</h2>
+                <br>
+                <div class="row">
+                  <% for(let i = 0; i < coach.length; i++) { %>
+                    <div class="col-md-4 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= coach[i].coach_id %></h5>
+                          <a href="/coaches/<%= coach[i].coach_id %>">
+                            <h5 class="card-title"><%= coach[i].coach_name %></h5>
+                          </a>
+                          <img src="images/<%= coach[i].coach_image %>" class="card-img-top" alt="<%= coach[i].coach_name %>" style="width: 100%;">
+                          <p class="card-text">Gender: <%= coach[i].coach_gender %></p>
+                          <p class="card-text">Age: <%= coach[i].coach_age %></p>
+                          <p class="card-text">Fee: <%= coach[i].coach_fee %></p>
+                        </div>
+                      </div>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+              
+
+            </div>
+            </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<title>ShuttleStore</title>
+	</head>
+	<body class=" background">
+		<style>
+			.background{
+				background-color: lightblue;
+			}</style>
+		<%- include ('partials/navbar.ejs') %>
+		<div class="container">
+				<br />
+				<div class="text-center"><h2>Coach Details</h2>
+				<br />
+				<% if(coaches) { %>
+				<div>
+					<p><b>Coach Name:</b><br /><%= coach.coach_name %></p>
+					<p>
+						<b>Coach Image:</b><br /><td>
+							<img src = "/images/<%= coach.coach_image %>" width="50%"><br><br></td>
+					</p>
+					<p><b>Coach Gender:</b><br /><%= coach.coach_gender %></p>
+					<p><b>Coach Age:</b><br />$<%= coach.coach_age %></p>
+					<p><b>Coach Fee:</b><br />$<%= coach.coach_fee %></p>
+					<p><b>Coach Description:</b><br /><%= coach.coach_description %></p>
+				</div>
+				<% } else { %>
+				<p>No coach found.</p>
+				<% } %>
+				<br><h4><a href ="/coaches">Back</a></h4>
+			</div>
+			</div>
+			</body>
+</html>

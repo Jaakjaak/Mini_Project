@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<title>ShuttleStore</title>
+        <link rel="stylesheet" href="styles.css">
+	</head>
+	<body class = 'background'>
+    <style>
+			.background{
+				background-color: lightblue;
+			}</style>
+		<%- include ('partials/navbar.ejs') %>
+		<div class="container mt-3">
+			<p>
+                <div class="image-container">
+					<h1><%= info.badminton_his_title %></h1><br>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Battledore_-_Youthful_Sports.png/340px-Battledore_-_Youthful_Sports.png" alt="An 1804 depiction of battledore and shuttlecock">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Battledore-and-shuttlecock.jpg/340px-Battledore-and-shuttlecock.jpg" alt="An 1854 depiction of battledore and shuttlecock by John Leech"width="300" height="300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Gleyre_ulysseetNausicaa.jpg/440px-Gleyre_ulysseetNausicaa.jpg" alt="Charles Gleyre, Odysseus and Nausicaa (with badminton rackets)"width="300" height="300">
+                </div><br/>
+				<p><%= info.badminton_his %></p><br><br><br>
+				<h1><%= info.badminton_info_title %></h1><br>
+				<p><%= info.badminton_info %></p><br>
+			</p>
+		</div>
+	</body>
+</html> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<title>ShuttleStore</title>
+	</head>	
+<style>
+.background{
+        background-color: lightblue;
+    }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+</style>
+</head>
+<body class="background">
+	<%- include ('partials/navbar2.ejs') %>
+
+	<div class="container">
+		<br><h2 style="text-align:center">Products</h2><br>
+		<div class="row">
+		  <% for(let i=0; i < product.length; i++) { %>
+			<div class="col-md-4 mb-4">
+			  <div class="card">
+				<img src="/images/<%= product[i].product_image %>" class="card-img-top" alt="<%= product[i].product_name %>" width="100%">
+				<div class="card-body">
+				  <a href="/homepage/<%= product[i].product_id %>"><h5 class="card-title"><%= product[i].product_name %></h5></a>
+				  <p class="card-text">Price: $<%= product[i].product_price %></p>
+				  <p class="card-text">Number left: <%= product[i].product_quantity %></p>
+				</div>
+			  </div>
+			</div>
+		  <% } %>
+		</div>
+	  </div>
+	  
+
+</body>
+</html>
